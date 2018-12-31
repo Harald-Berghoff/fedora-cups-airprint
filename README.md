@@ -3,7 +3,7 @@ Docker image for CUPS intended as an AirPrint relay on QNAP TS, based on Fedora
 
 (as a new implementation from [quadportnick/docker-cups-airprint][https://github.com/quadportnick/docker-cups-airprint])
 
-This Fedora-based Docker image runs a CUPS instance that is meant as an AirPrint relay for printers that are already on the network but not AirPrint capable. After updating the Ubuntu base as a from quadportnick/cups-airprint, who is using it on a Synology NAS, i wanted to use Fedora as a means of getting a Samsung CLP-310 printer. I am lacking the knowledge to get the foomatic driver up and running on the Ubuntu image, so I choosed to give it a go with a Fedora base.
+This Fedora-based Docker image runs a CUPS instance that is meant as an AirPrint relay for printers that are already on the network but not AirPrint capable. After updating the Ubuntu base as a from quadportnick/cups-airprint, who is using it on a Synology NAS, I wanted to use Fedora as a means of getting a Samsung CLP-310 printer. I am lacking the knowledge to get the foomatic driver up and running on the Ubuntu image, so I choosed to give it a go with a Fedora base.
 
 The local Avahi will be utilized for advertising the printers on the network.
 
@@ -29,7 +29,7 @@ Hopefully someone else finds this useful. Credits go to quadportnick.
 ## Using
 To start the image either use the GUI of your NAS or use on the commandline:
 
-`docker run -p <<hostport>>:631 --env CUPSADMIN=<<adminuser>> --env CUPSPASSWORD=<<adminpwd>> ubuntu-cups-airprint:latest`
+`docker run -p <<hostport>>:631 --env CUPSADMIN=<<adminuser>> --env CUPSPASSWORD=<<adminpwd>> fedora-cups-airprint:latest`
 
 It is recommended to use also port 631 as the hostport, as this is expected by some other software.
 
